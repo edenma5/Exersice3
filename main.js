@@ -47,7 +47,6 @@ addTodo.addEventListener('click', () => {
         e.preventDefault;
         const afterElement = getDragAfterElement(todo_wrapper, e.clientY);
         const draggable = document.querySelector('.dragging');
-        console.log(afterElement);
         if (afterElement == null) {
             todo_wrapper.appendChild(draggable);
         } else {
