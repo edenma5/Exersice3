@@ -87,8 +87,6 @@ body {
     cursor: move;
 }
 
-/* ab280e904528febddfe84ce04f4d8e513308dc62 */
-
 .item .input {
     width: 80%;
     height: 85%;
@@ -97,7 +95,7 @@ body {
 .delete {
     position: absolute;
     right: 10px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
