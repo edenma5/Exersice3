@@ -27,7 +27,7 @@ body {
     height: 650px;
     padding: 20px 0;
     background-color: #ffffff50;
-    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgb(147, 158, 161);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -51,22 +51,14 @@ body {
     background-color: rgb(107, 128, 123);
 }
 
-/* .todo_name {
-    width: 80%;
-    height: 40px;
-    border-radius: 5px;
-    padding-left: 20px;
-} */
-
 .add_todo {
-    width: 35%;
+    padding: .5rem 1rem;
     margin: 10px 0;
-    height: 40px;
-    background-color: rgb(79, 140, 255);
+    background-color: rgb(80, 124, 207);
     color: #fff;
-    font-size: 20px;
+    font-size: 1.2em;
     cursor: pointer;
-    transition: .2s;
+    transition: all .2s ease-in-out;
     border-radius: 5px;
 }
 
@@ -75,21 +67,29 @@ body {
 }
 
 .item {
-    width: 87%;
-    height: 40px;
-    background-color: #fff;
+    width: 80%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.692);
     margin: 10px 0;
     display: flex;
     align-items: center;
     padding-left: 10px;
-    border-radius: 5px;
-    border: 1px solid grey;
+    border-radius: 15px;
+    border-bottom: 2px solid grey;
     cursor: move;
 }
 
 .item .input {
-    width: 80%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.item::after {
+    content: '⇡⇣';
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
 }
 
 .delete {
@@ -100,5 +100,28 @@ body {
 }
 
 .item.dragging {
-    opacity: .5;
+    opacity: .2;
+}
+
+@media screen and (max-width: 500px) {
+    .todo_wrapp {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .wrapper {
+        position: relative;
+        width: 90%;
+    }
+
+    .add_todo {
+        font-size: .9em;
+    }
+
+    .item {
+        width: 75%;
+        height: 30px;
+        margin: 10px 0;
+        padding-left: 10px;
+    }
 }

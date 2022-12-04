@@ -4,13 +4,45 @@ let addTodo = document.querySelector('.add_todo');
 let hiddenInput = document.querySelector('.hidden')
 let todoList = [];
 
-addTodo.addEventListener('click', () => {
-    // if (localStorage.getItem('data') == null)
-    //     localStorage.setItem('data', '[]');
-    // todoList = JSON.parse(localStorage.getItem('data'));
-    // todoList.push(newTodo.value);
-    // localStorage.setItem('data', JSON.stringify(todoList));
+// const getDataFromLS = () => {
+//     if (!localStorage.getItem('data'))
+//         localStorage.setItem('data', JSON.stringify(['eden', 'maimon']))
 
+//     else {
+//         const data = JSON.parse(localStorage.getItem('data'));
+//         console.log(data);
+
+//         for (let i = 0; i < data.length; i++) {
+//             let newListBox = document.createElement('div');
+//             newListBox.className = 'item';
+//             newListBox.setAttribute('draggable', 'true');
+//             todo_wrapper.appendChild(newListBox);
+
+//             let newTodo_list = document.createElement('input');
+//             newTodo_list.className = 'input';
+//             newTodo_list.setAttribute('placeholder', 'Write Here..')
+//             newTodo_list.value = data[i];
+//             newListBox.appendChild(newTodo_list);
+
+//             let delete_todo = document.createElement('div');
+//             delete_todo.className = 'delete';
+//             delete_todo.innerHTML = '🚮';
+//             newListBox.appendChild(delete_todo);
+//             delete_todo.addEventListener('click', () => {
+//                 todo_wrapper.removeChild(newListBox);
+//                 data.splice(i, 1)
+//                 localStorage.setItem('data', JSON.stringify(data))
+//             })
+
+//         }
+//         return data;
+//     }
+// }
+// getDataFromLS()
+
+
+
+addTodo.addEventListener('click', () => {
     //יצירת אלמנטים
     let newListBox = document.createElement('div');
     newListBox.className = 'item';
@@ -20,6 +52,7 @@ addTodo.addEventListener('click', () => {
     let newTodo_list = document.createElement('input');
     newTodo_list.className = 'input';
     newTodo_list.setAttribute('placeholder', 'Write Here..')
+
     newListBox.appendChild(newTodo_list);
 
     //לולאה על כל פילד לצורך מחיקה
@@ -27,12 +60,13 @@ addTodo.addEventListener('click', () => {
     for (let i = 0; i < item.length; i++) {
         let delete_todo = document.createElement('div');
         delete_todo.className = 'delete';
-        delete_todo.innerHTML = '🚮';
+        delete_todo.innerHTML = '✖️';
         newListBox.appendChild(delete_todo);
         delete_todo.addEventListener('click', () => {
             todo_wrapper.removeChild(item[i]);
         })
     }
+
 
     //Drag And Drop Functionality
     item.forEach(item => {
